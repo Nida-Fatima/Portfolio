@@ -64,6 +64,17 @@
   83.3%,95.96% {background-color: rgba(70,70,70,0.7);}
 	
 }
+@keyframes underline{
+	0%{
+		text-decoration: none;
+	}
+	50%{
+		text-decoration: underline;
+	}
+	100%{
+		text-decoration: none;
+	}
+}
 
 
 
@@ -93,6 +104,7 @@
 	background-size:cover;
 	background-repeat: no-repeat;
 	background-position: center;
+	overflow: hidden;
 }
 
 #body::after{
@@ -105,7 +117,7 @@
 /*	background-color: rgba(175,175,176,0.7);*/
 	background-color: rgba(2,2,2,0.8);
 	z-index: -1;
-	overflow: auto;
+	overflow: hidden;
 }
 
 /* Headings*/
@@ -118,6 +130,7 @@ h1,h2,h3{
 
 .main-lg-heading{
 	font-size: 4rem;
+	text-align: center;
 }
 
 
@@ -134,6 +147,10 @@ h1,h2,h3{
 	color: #fff;
 	text-decoration: none;
 }
+.menu a:hover, .icon a:hover{
+	font-size: 2.5rem;
+	transition: all 0.5s ease-out;
+}
 
 header{
 	position: fixed;
@@ -148,9 +165,18 @@ header{
 }
 
 .wrapper{
+/*
 	text-align: center;
 	width: 70vw;
 	margin: 0 auto;	
+*/
+	margin: 0 auto;
+	width: 70vw;
+	display: flex;
+	flex-wrap: wrap;
+	align-items:center;
+	flex-direction: column;
+	justify-content: space-around;
 }
 main {
 /*	padding: rem;*/
@@ -178,18 +204,15 @@ main {
 .list-wrapper{
 		
 	overflow: hidden;
-	height: 4.9rem;
+	height: 4.8rem;
 	display: inline-block;
 /*	background: rgba(90,90,90,0.4);*/
 	margin-top: 2rem;
 	border-radius: 3rem;
 	background-color: rgba(238, 206, 26,0.3);
 	box-shadow: 1px 1px 15px #111;
-	
 
 }
-
-
 
 .service-item{
 	
@@ -198,11 +221,11 @@ main {
 
 .service-item h2{
 	
-	font-size: 4rem;
+	font-size: 3.5rem;
 	text-transform: uppercase;
-	line-height: 4rem;
+	line-height: 4.5rem;
 	transition: all 0.5s ease-out;
-	text-shadow: 1px 1px 15px #111;
+	text-shadow: 1px 1px 15px #444;
 }
 
 
@@ -214,7 +237,7 @@ main {
     border-radius: 20px;
 	box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.5);
 	margin-top: 5rem;
-	padding: 0.3rem 2.5rem;
+	padding: 0.1rem 1.7rem;
 	cursor: pointer;
 	transition: all 0.5s ease-out;
 }
@@ -227,6 +250,7 @@ main {
 #button h3{
 	margin-top: 1rem;
 	font-weight: 500;
+	font-size: 1.7rem;
 	text-shadow: 1px 3px 15px black;
 }
 
@@ -244,7 +268,7 @@ main {
 
 main .icons {
 	
-	margin-top: 6rem;
+	margin-top: 4rem;
 }
 
 .icons a{
@@ -344,7 +368,8 @@ main .icons {
 .menu-nav{
 	margin: 0;
 	padding: 0;
-	background: #333;
+/*	background: #333;*/
+	background: rgba(60, 60, 60,0.9);
 	list-style: none;
 	transform: translate3d(0,-100%,0);
 	transition: all 0.5s ease-out;
@@ -357,7 +382,8 @@ main .icons {
 
 /* branding side */
 .menu-branding{
-	background: var(--primary-color);
+/*	background: var(--primary-color);*/
+	background: rgba(51, 51, 51,0.9);
 	transition: all 0.5s ease-out;
 	transform: translate3d(0,100%,0);
 }
@@ -378,6 +404,7 @@ main .icons {
 	border: solid 3px var(--secondary-color);
 	position: relative;
 }
+
 
 .nav-item{
 	transform: translate3d(600px, 0, 0);
@@ -605,7 +632,7 @@ main .icons {
 	border: 0;
 	margin-bottom: 0.3rem;
 	text-decoration: none;
-	background: #333;
+	background: #555;
 	color: #fff;	
 }
 
@@ -663,15 +690,16 @@ footer{
 	body{
 		overflow: auto;
 	}
-	.main-lg-heading{
+	.wrapper.main-lg-heading{
 		margin-top: 15vh;
 		font-size: 2rem;
 		margin-top: 20vh;
-		font-size: 3rem;
+		text-align: center;
+/*		font-size: 3rem;*/
 	}
 	.about-lg-heading{
 		margin-top: 10vh;
-		font-size: 3rem;
+		font-size: 2.7rem;
 		text-align: left;
 		padding: 0 1rem;
 	}
@@ -692,8 +720,8 @@ footer{
 		padding: 0;
 		height: 4rem;
 	}
-	.service-item h2{
-		font-size: 2rem;
+	.list-wrapper.service-item h2{
+		font-size: 1.5rem;
 		line-height: 4rem;
 		margin: 0;
 	}
@@ -725,7 +753,7 @@ footer{
 	}
 	.service-item h2{
 		
-		font-size: 3rem;
+		font-size: 1.7rem;
 	}
 	main .icons{
 		margin-top: 3rem;
@@ -740,7 +768,7 @@ footer{
 		margin-bottom: 1rem;
 	}
 	.wrapper.lg-heading{
-		font-size: 3rem;
+		font-size: 2.7rem;
 	}
 	.menu-nav, .menu-branding{
 		float: none;
